@@ -1,0 +1,23 @@
+@startuml
+
+class Canvas {
+}
+
+class Grid {
+}
+
+class Tileset {
+}
+
+class Tile {
+}
+
+class Layer {
+}
+
+Canvas --> Grid : "has a"
+Canvas --> Layer : "contains multiple"
+Layer --> Tile : "contains multiple"
+Tileset --> Tile : "defines multiple"
+
+@enduml

@@ -1,0 +1,78 @@
+@startuml
+' Main Application
+class Canvas {
+}
+
+class Grid {
+}
+
+class Tileset {
+}
+
+class Tile {
+}
+
+class Layer {
+}
+
+class CanvasView {
+}
+
+class TilesetView {
+}
+
+class LayerView {
+}
+
+class CanvasController {
+}
+
+class TilesetController {
+}
+
+class LayerController {
+}
+
+' Additional Components
+class ProjectLoader {
+}
+
+class ProjectSaver {
+}
+
+class Toolbox {
+}
+
+class Tool {
+}
+
+class HistoryManager {
+}
+
+class UserPreferences {
+}
+
+' Relations
+Canvas --> Grid : "has a"
+Canvas --> Layer : "contains multiple"
+Layer --> Tile : "contains multiple"
+Tileset --> Tile : "defines multiple"
+Toolbox --> Tool : "contains multiple"
+
+' Display Relations
+CanvasView ..> Canvas : "displays"
+TilesetView ..> Tileset : "displays"
+LayerView ..> Layer : "displays"
+
+' Control Relations
+CanvasController ..> CanvasView : "controls"
+TilesetController ..> TilesetView : "controls"
+LayerController ..> LayerView : "controls"
+CanvasController ..> Canvas : "updates"
+TilesetController ..> Tileset : "updates"
+LayerController ..> Layer : "updates"
+
+' Menu MVC (as before)...
+
+' Transition Mechanism (as before)...
+@enduml
